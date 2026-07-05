@@ -1,8 +1,0 @@
-com/orderplatform/common/event/StockReleasedEvent.class
-com/orderplatform/common/event/StockFulfilledEvent.class
-com/orderplatform/common/event/OrderItemEvent.class
-com/orderplatform/common/event/OrderFulfilledEvent.class
-com/orderplatform/common/event/OrderCreatedEvent.class
-com/orderplatform/common/event/InventoryReservedEvent.class
-com/orderplatform/common/event/InventoryReservationFailedEvent.class
-com/orderplatform/common/event/OrderCancelledEvent.class

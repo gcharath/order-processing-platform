@@ -1,0 +1,50 @@
+# Maven build output
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE — IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE — Eclipse
+.classpath
+.project
+.settings/
+*.launch
+
+# IDE — VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Spring Boot
+spring-pid
+
+# Docker volumes and local data
+docker/postgres_data/
+docker/grafana_data/
+
+# Sensitive config overrides (local only)
+application-local.yml
+application-local.properties
+*-local.yml
+*-local.properties
+
+# Claude Code session files
+.claude/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Kubernetes — do not ignore k8s/ manifests, but ignore any generated/substituted copies
+k8s/**/*-resolved.yml
