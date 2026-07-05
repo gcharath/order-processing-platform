@@ -1,0 +1,70 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push order-service
+        env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -f order-service/Dockerfile \
+            -t $ECR_REGISTRY/order-service:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/order-service:$IMAGE_TAG
+
+      - name: Build and push inventory-service
+        env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -f inventory-service/Dockerfile \
+            -t $ECR_REGISTRY/inventory-service:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/inventory-service:$IMAGE_TAG
+
+      - name: Update kubeconfig for EKS
+        run: |
+          aws eks update-kubeconfig \
+            --name ${{ secrets.EKS_CLUSTER_NAME }} \
+            --region ${{ secrets.AWS_REGION }}
+
+      - name: Deploy to EKS
+        env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          envsubst < k8s/order-service/deployment.yml     | kubectl apply -f -
+          envsubst < k8s/inventory-service/deployment.yml | kubectl apply -f -
+          kubectl apply -f k8s/namespace.yml
+          kubectl apply -f k8s/secrets.yml
+          kubectl apply -f k8s/postgres/
+          kubectl apply -f k8s/kafka/
+          kubectl apply -f k8s/zipkin/
+          kubectl apply -f k8s/order-service/configmap.yml
+          kubectl apply -f k8s/order-service/service.yml
+          kubectl apply -f k8s/inventory-service/configmap.yml
+          kubectl apply -f k8s/inventory-service/service.yml
+          kubectl apply -f k8s/ingress.yml
+
+      - name: Wait for rollout
+        run: |
+          kubectl rollout status deployment/order-service -n order-platform --timeout=120s
+          kubectl rollout status deployment/inventory-service -n order-platform --timeout=120s

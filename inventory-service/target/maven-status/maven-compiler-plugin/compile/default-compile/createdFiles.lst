@@ -1,0 +1,17 @@
+com/orderplatform/inventoryservice/messaging/OrderCancelledConsumer.class
+com/orderplatform/inventoryservice/repository/InventoryItemRepository.class
+com/orderplatform/inventoryservice/config/KafkaConfig.class
+com/orderplatform/inventoryservice/api/request/AddStockRequest.class
+com/orderplatform/inventoryservice/application/InventoryService.class
+com/orderplatform/inventoryservice/domain/Reservation.class
+com/orderplatform/inventoryservice/repository/ReservationRepository.class
+com/orderplatform/inventoryservice/domain/InsufficientStockException.class
+com/orderplatform/inventoryservice/messaging/OrderCreatedConsumer.class
+com/orderplatform/inventoryservice/domain/ReservationStatus.class
+com/orderplatform/inventoryservice/config/GlobalExceptionHandler.class
+com/orderplatform/inventoryservice/config/KafkaHealthIndicator.class
+com/orderplatform/inventoryservice/InventoryServiceApplication.class
+com/orderplatform/inventoryservice/domain/InventoryItem.class
+com/orderplatform/inventoryservice/messaging/OrderFulfilledConsumer.class
+com/orderplatform/inventoryservice/api/response/InventoryItemResponse.class
+com/orderplatform/inventoryservice/api/InventoryController.class

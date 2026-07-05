@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.orderplatform.orderservice.integration.OrderIntegrationTest" time="29.15" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/test-classes:/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/classes:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.0/spring-boot-starter-web-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.0/spring-boot-starter-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot/3.5.0/spring-boot-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.0/spring-boot-starter-logging-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.0/spring-boot-starter-json-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.0/jackson-datatype-jdk8-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.0/jackson-module-parameter-names-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.0/spring-boot-starter-tomcat-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.41/tomcat-embed-core-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.41/tomcat-embed-websocket-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-web/6.2.7/spring-web-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-beans/6.2.7/spring-beans-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-webmvc/6.2.7/spring-webmvc-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-aop/6.2.7/spring-aop-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-expression/6.2.7/spring-expression-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.0/spring-boot-starter-data-jpa-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.0/spring-boot-starter-jdbc-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/zaxxer/HikariCP/6.3.0/HikariCP-6.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-jdbc/6.2.7/spring-jdbc-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/orm/hibernate-core/6.6.15.Final/hibernate-core-6.6.15.Final.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/charathgopalakrishnan/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/data/spring-data-jpa/3.5.0/spring-data-jpa-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/data/spring-data-commons/3.5.0/spring-data-commons-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-orm/6.2.7/spring-orm-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-aspects/6.2.7/spring-aspects-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.0/spring-boot-starter-validation-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.41/tomcat-embed-el-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/flywaydb/flyway-core/11.7.2/flyway-core-11.7.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.19.0/jackson-dataformat-toml-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.0/jackson-core-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.0/jackson-datatype-jsr310-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.0/jackson-annotations-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/flywaydb/flyway-database-postgresql/11.7.2/flyway-database-postgresql-11.7.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/Users/charathgopalakrishnan/.m2/repository/com/orderplatform/common/1.0.0-SNAPSHOT/common-1.0.0-SNAPSHOT.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.0/jackson-databind-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/kafka/spring-kafka/3.3.6/spring-kafka-3.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-context/6.2.7/spring-context-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-messaging/6.2.7/spring-messaging-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-tx/6.2.7/spring-tx-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/retry/spring-retry/2.0.12/spring-retry-2.0.12.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/luben/zstd-jni/1.5.6-4/zstd-jni-1.5.6-4.jar:/Users/charathgopalakrishnan/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-observation/1.15.0/micrometer-observation-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-commons/1.15.0/micrometer-commons-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.5.0/spring-boot-starter-actuator-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.5.0/spring-boot-actuator-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-actuator/3.5.0/spring-boot-actuator-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-jakarta9/1.15.0/micrometer-jakarta9-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-registry-prometheus/1.15.0/micrometer-registry-prometheus-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-core/1.15.0/micrometer-core-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-core/1.3.6/prometheus-metrics-core-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-model/1.3.6/prometheus-metrics-model-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-config/1.3.6/prometheus-metrics-config-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-tracer-common/1.3.6/prometheus-metrics-tracer-common-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-exposition-formats/1.3.6/prometheus-metrics-exposition-formats-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-exposition-textformats/1.3.6/prometheus-metrics-exposition-textformats-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-tracing-bridge-brave/1.5.0/micrometer-tracing-bridge-brave-1.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-tracing/1.5.0/micrometer-tracing-1.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/context-propagation/1.1.3/context-propagation-1.1.3.jar:/Users/charathgopalakrishnan/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave/6.1.0/brave-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave-context-slf4j/6.1.0/brave-context-slf4j-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave-instrumentation-http/6.1.0/brave-instrumentation-http-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/aws/brave-propagation-aws/1.3.0/brave-propagation-aws-1.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/contrib/brave-propagation-w3c/brave-propagation-tracecontext/0.2.0/brave-propagation-tracecontext-0.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/reporter2/zipkin-reporter-brave/3.5.0/zipkin-reporter-brave-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/reporter2/zipkin-reporter/3.5.0/zipkin-reporter-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.0/spring-boot-starter-test-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-test/3.5.0/spring-boot-test-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.0/spring-boot-test-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/charathgopalakrishnan/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/charathgopalakrishnan/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/charathgopalakrishnan/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/charathgopalakrishnan/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-core/6.2.7/spring-core-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-jcl/6.2.7/spring-jcl-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-test/6.2.7/spring-test-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/xmlunit/xmlunit-core/2.10.1/xmlunit-core-2.10.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/kafka/spring-kafka-test/3.3.6/spring-kafka-test-3.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/zookeeper/zookeeper/3.8.4/zookeeper-3.8.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.8.4/zookeeper-jute-3.8.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/yetus/audience-annotations/0.12.0/audience-annotations-0.12.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-handler/4.1.121.Final/netty-handler-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-common/4.1.121.Final/netty-common-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-resolver/4.1.121.Final/netty-resolver-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-buffer/4.1.121.Final/netty-buffer-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport/4.1.121.Final/netty-transport-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.121.Final/netty-transport-native-unix-common-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-codec/4.1.121.Final/netty-codec-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-native-epoll/4.1.121.Final/netty-transport-native-epoll-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.121.Final/netty-transport-classes-epoll-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar:/Users/charathgopalakrishnan/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar:/Users/charathgopalakrishnan/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server/3.9.1/kafka-server-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-storage/3.9.1/kafka-storage-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.2.0/caffeine-3.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-group-coordinator/3.9.1/kafka-group-coordinator-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-transaction-coordinator/3.9.1/kafka-transaction-coordinator-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-raft/3.9.1/kafka-raft-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-metadata/3.9.1/kafka-metadata-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/pcollections/pcollections/4.0.1/pcollections-4.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.9.1/kafka-streams-test-utils-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-streams/3.9.1/kafka-streams-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/scala-library/2.13.15/scala-library-2.13.15.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-group-coordinator-api/3.9.1/kafka-group-coordinator-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-storage-api/3.9.1/kafka-storage-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-tools-api/3.9.1/kafka-tools-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/net/sourceforge/argparse4j/argparse4j/0.7.0/argparse4j-0.7.0.jar:/Users/charathgopalakrishnan/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar:/Users/charathgopalakrishnan/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/charathgopalakrishnan/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/charathgopalakrishnan/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.13/2.19.0/jackson-module-scala_2.13-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8.3/paranamer-2.8.3.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.19.0/jackson-dataformat-csv-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/bitbucket/b_c/jose4j/0.9.4/jose4j-0.9.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/modules/scala-collection-compat_2.13/2.10.0/scala-collection-compat_2.13-2.10.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/1.0.2/scala-java8-compat_2.13-1.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/scala-reflect/2.13.15/scala-reflect-2.13.15.jar:/Users/charathgopalakrishnan/.m2/repository/com/typesafe/scala-logging/scala-logging_2.13/3.9.5/scala-logging_2.13-3.9.5.jar:/Users/charathgopalakrishnan/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.12.1/metrics-core-4.1.12.1.jar:/Users/charathgopalakrishnan/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-testcontainers/3.5.0/spring-boot-testcontainers-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.0/spring-boot-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/testcontainers/1.21.0/testcontainers-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/hamcrest/hamcrest-core/3.0/hamcrest-core-3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/charathgopalakrishnan/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-api/3.4.2/docker-java-api-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.4.2/docker-java-transport-zerodep-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-transport/3.4.2/docker-java-transport-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/junit-jupiter/1.21.0/junit-jupiter-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/postgresql/1.21.0/postgresql-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/jdbc/1.21.0/jdbc-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/database-commons/1.21.0/database-commons-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/kafka/1.21.0/kafka-1.21.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="APPLICATION_NAME" value="order-service"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/surefire/surefirebooter-20260616165758609_3.jar /Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/surefire 2026-06-16T16-57-58_508-jvmRun1 surefire-20260616165758609_1tmp surefire_0-20260616165758609_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/test-classes:/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/classes:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.0/spring-boot-starter-web-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.0/spring-boot-starter-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot/3.5.0/spring-boot-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.0/spring-boot-starter-logging-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.0/spring-boot-starter-json-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.0/jackson-datatype-jdk8-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.0/jackson-module-parameter-names-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.0/spring-boot-starter-tomcat-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.41/tomcat-embed-core-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.41/tomcat-embed-websocket-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-web/6.2.7/spring-web-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-beans/6.2.7/spring-beans-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-webmvc/6.2.7/spring-webmvc-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-aop/6.2.7/spring-aop-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-expression/6.2.7/spring-expression-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.0/spring-boot-starter-data-jpa-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.0/spring-boot-starter-jdbc-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/zaxxer/HikariCP/6.3.0/HikariCP-6.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-jdbc/6.2.7/spring-jdbc-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/orm/hibernate-core/6.6.15.Final/hibernate-core-6.6.15.Final.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/charathgopalakrishnan/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/charathgopalakrishnan/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/data/spring-data-jpa/3.5.0/spring-data-jpa-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/data/spring-data-commons/3.5.0/spring-data-commons-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-orm/6.2.7/spring-orm-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-aspects/6.2.7/spring-aspects-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.0/spring-boot-starter-validation-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.41/tomcat-embed-el-10.1.41.jar:/Users/charathgopalakrishnan/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/flywaydb/flyway-core/11.7.2/flyway-core-11.7.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.19.0/jackson-dataformat-toml-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.0/jackson-core-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.0/jackson-datatype-jsr310-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.0/jackson-annotations-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/flywaydb/flyway-database-postgresql/11.7.2/flyway-database-postgresql-11.7.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/Users/charathgopalakrishnan/.m2/repository/com/orderplatform/common/1.0.0-SNAPSHOT/common-1.0.0-SNAPSHOT.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.0/jackson-databind-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/kafka/spring-kafka/3.3.6/spring-kafka-3.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-context/6.2.7/spring-context-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-messaging/6.2.7/spring-messaging-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-tx/6.2.7/spring-tx-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/retry/spring-retry/2.0.12/spring-retry-2.0.12.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/luben/zstd-jni/1.5.6-4/zstd-jni-1.5.6-4.jar:/Users/charathgopalakrishnan/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-observation/1.15.0/micrometer-observation-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-commons/1.15.0/micrometer-commons-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.5.0/spring-boot-starter-actuator-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.5.0/spring-boot-actuator-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-actuator/3.5.0/spring-boot-actuator-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-jakarta9/1.15.0/micrometer-jakarta9-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-registry-prometheus/1.15.0/micrometer-registry-prometheus-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-core/1.15.0/micrometer-core-1.15.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-core/1.3.6/prometheus-metrics-core-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-model/1.3.6/prometheus-metrics-model-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-config/1.3.6/prometheus-metrics-config-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-tracer-common/1.3.6/prometheus-metrics-tracer-common-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-exposition-formats/1.3.6/prometheus-metrics-exposition-formats-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/prometheus/prometheus-metrics-exposition-textformats/1.3.6/prometheus-metrics-exposition-textformats-1.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-tracing-bridge-brave/1.5.0/micrometer-tracing-bridge-brave-1.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/micrometer-tracing/1.5.0/micrometer-tracing-1.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/micrometer/context-propagation/1.1.3/context-propagation-1.1.3.jar:/Users/charathgopalakrishnan/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave/6.1.0/brave-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave-context-slf4j/6.1.0/brave-context-slf4j-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/brave/brave-instrumentation-http/6.1.0/brave-instrumentation-http-6.1.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/aws/brave-propagation-aws/1.3.0/brave-propagation-aws-1.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/contrib/brave-propagation-w3c/brave-propagation-tracecontext/0.2.0/brave-propagation-tracecontext-0.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/reporter2/zipkin-reporter-brave/3.5.0/zipkin-reporter-brave-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/zipkin/reporter2/zipkin-reporter/3.5.0/zipkin-reporter-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.0/spring-boot-starter-test-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-test/3.5.0/spring-boot-test-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.0/spring-boot-test-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/charathgopalakrishnan/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/charathgopalakrishnan/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/charathgopalakrishnan/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar:/Users/charathgopalakrishnan/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/charathgopalakrishnan/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/charathgopalakrishnan/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-core/6.2.7/spring-core-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-jcl/6.2.7/spring-jcl-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/spring-test/6.2.7/spring-test-6.2.7.jar:/Users/charathgopalakrishnan/.m2/repository/org/xmlunit/xmlunit-core/2.10.1/xmlunit-core-2.10.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/kafka/spring-kafka-test/3.3.6/spring-kafka-test-3.3.6.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/zookeeper/zookeeper/3.8.4/zookeeper-3.8.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.8.4/zookeeper-jute-3.8.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/yetus/audience-annotations/0.12.0/audience-annotations-0.12.0.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-handler/4.1.121.Final/netty-handler-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-common/4.1.121.Final/netty-common-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-resolver/4.1.121.Final/netty-resolver-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-buffer/4.1.121.Final/netty-buffer-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport/4.1.121.Final/netty-transport-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.121.Final/netty-transport-native-unix-common-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-codec/4.1.121.Final/netty-codec-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-native-epoll/4.1.121.Final/netty-transport-native-epoll-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.121.Final/netty-transport-classes-epoll-4.1.121.Final.jar:/Users/charathgopalakrishnan/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar:/Users/charathgopalakrishnan/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar:/Users/charathgopalakrishnan/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server/3.9.1/kafka-server-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-storage/3.9.1/kafka-storage-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.2.0/caffeine-3.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-group-coordinator/3.9.1/kafka-group-coordinator-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-transaction-coordinator/3.9.1/kafka-transaction-coordinator-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-raft/3.9.1/kafka-raft-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-metadata/3.9.1/kafka-metadata-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/pcollections/pcollections/4.0.1/pcollections-4.0.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-server-common/3.9.1/kafka-server-common-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.9.1/kafka-streams-test-utils-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-streams/3.9.1/kafka-streams-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/scala-library/2.13.15/scala-library-2.13.15.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-group-coordinator-api/3.9.1/kafka-group-coordinator-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-storage-api/3.9.1/kafka-storage-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka-tools-api/3.9.1/kafka-tools-api-3.9.1.jar:/Users/charathgopalakrishnan/.m2/repository/net/sourceforge/argparse4j/argparse4j/0.7.0/argparse4j-0.7.0.jar:/Users/charathgopalakrishnan/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar:/Users/charathgopalakrishnan/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/charathgopalakrishnan/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/charathgopalakrishnan/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.13/2.19.0/jackson-module-scala_2.13-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8.3/paranamer-2.8.3.jar:/Users/charathgopalakrishnan/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.19.0/jackson-dataformat-csv-2.19.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/bitbucket/b_c/jose4j/0.9.4/jose4j-0.9.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/modules/scala-collection-compat_2.13/2.10.0/scala-collection-compat_2.13-2.10.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/1.0.2/scala-java8-compat_2.13-1.0.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/scala-lang/scala-reflect/2.13.15/scala-reflect-2.13.15.jar:/Users/charathgopalakrishnan/.m2/repository/com/typesafe/scala-logging/scala-logging_2.13/3.9.5/scala-logging_2.13-3.9.5.jar:/Users/charathgopalakrishnan/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.12.1/metrics-core-4.1.12.1.jar:/Users/charathgopalakrishnan/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/kafka/kafka_2.13/3.9.1/kafka_2.13-3.9.1-test.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-testcontainers/3.5.0/spring-boot-testcontainers-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.0/spring-boot-autoconfigure-3.5.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/testcontainers/1.21.0/testcontainers-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/charathgopalakrishnan/.m2/repository/org/hamcrest/hamcrest-core/3.0/hamcrest-core-3.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/charathgopalakrishnan/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-api/3.4.2/docker-java-api-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.4.2/docker-java-transport-zerodep-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/com/github/docker-java/docker-java-transport/3.4.2/docker-java-transport-3.4.2.jar:/Users/charathgopalakrishnan/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/junit-jupiter/1.21.0/junit-jupiter-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/postgresql/1.21.0/postgresql-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/jdbc/1.21.0/jdbc-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/database-commons/1.21.0/database-commons-1.21.0.jar:/Users/charathgopalakrishnan/.m2/repository/org/testcontainers/kafka/1.21.0/kafka-1.21.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/charathgopalakrishnan"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service/target/surefire/surefirebooter-20260616165758609_3.jar"/>
+    <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.10+11-LTS-240"/>
+    <property name="LOG_CORRELATION_PATTERN" value="%correlationId"/>
+    <property name="user.name" value="charathgopalakrishnan"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/charathgopalakrishnan/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/0c/f0gf19651m16l76f2s5l74vw0000gp/T/"/>
+    <property name="catalina.home" value="/private/var/folders/0c/f0gf19651m16l76f2s5l74vw0000gp/T/tomcat.0.16536274405362199913"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="17.0.10"/>
+    <property name="user.dir" value="/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="48519"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="/private/var/folders/0c/f0gf19651m16l76f2s5l74vw0000gp/T/tomcat.0.16536274405362199913"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/charathgopalakrishnan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.10+11-LTS-240"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="CONSOLE_LOG_PATTERN" value="%d{HH:mm:ss.SSS} %-5level [%X{traceId},%X{spanId}] %logger{36} - %msg%n"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[order-service] "/>
+  </properties>
+  <testcase name="createOrder_persistsToDB_andReturns201" classname="com.orderplatform.orderservice.integration.OrderIntegrationTest" time="1.249">
+    <system-out><![CDATA[16:57:59.462 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.orderplatform.orderservice.integration.OrderIntegrationTest]: OrderIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:57:59.541 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+16:57:59.547 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+16:57:59.583 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.21.0
+16:57:59.846 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+16:58:00.179 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+16:58:00.180 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+16:58:00.216 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 20.10.8
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 1984 MB
+16:58:00.262 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
+16:58:00.422 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+16:58:00.650 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: 0e02a6d88012e928992e9a8a8d6adc3cd9198de1010bc4eb437055c077572f77
+16:58:01.470 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT1.208299S
+16:58:01.481 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+16:58:01.481 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+16:58:01.482 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+16:58:01.627 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.orderplatform.orderservice.OrderServiceApplication for test class com.orderplatform.orderservice.integration.OrderIntegrationTest
+16:58:01.748 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Creating container for image: confluentinc/cp-kafka:7.6.1
+16:58:01.843 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Container confluentinc/cp-kafka:7.6.1 is starting: fdbdf77165df24ad09178d7a841cf3fcdcb422671dce3eb35ee574c6d347b4a6
+16:58:14.180 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Container confluentinc/cp-kafka:7.6.1 started in PT12.432118S
+16:58:14.180 [main] INFO tc.postgres:15-alpine -- Creating container for image: postgres:15-alpine
+16:58:14.286 [main] INFO tc.postgres:15-alpine -- Container postgres:15-alpine is starting: e9ac0ba5903c989e273c2e15d4d756a4044a5308f72d4de9bac61980f2076b82
+16:58:17.013 [main] INFO tc.postgres:15-alpine -- Container postgres:15-alpine started in PT2.832601S
+16:58:17.014 [main] INFO tc.postgres:15-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:58913/orders_db?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+16:58:17.419 INFO  [,] c.o.o.i.OrderIntegrationTest - Starting OrderIntegrationTest using Java 17.0.10 with PID 48519 (started by charathgopalakrishnan in /Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/order-service)
+16:58:17.420 DEBUG [,] c.o.o.i.OrderIntegrationTest - Running with Spring Boot v3.5.0, Spring v6.2.7
+16:58:17.421 INFO  [,] c.o.o.i.OrderIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+16:58:18.423 INFO  [,] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:58:18.482 INFO  [,] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+16:58:19.185 INFO  [,] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+16:58:19.204 INFO  [,] o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:58:19.204 INFO  [,] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+16:58:19.249 INFO  [,] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:58:19.250 INFO  [,] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1809 ms
+16:58:20.052 INFO  [,] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:58913/orders_db?loggerLevel=OFF (PostgreSQL 15.18)
+16:58:20.138 INFO  [,] o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+16:58:20.142 INFO  [,] o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.025s)
+16:58:20.178 INFO  [,] o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+16:58:20.331 INFO  [,] o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+16:58:20.345 INFO  [,] o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create tables"
+16:58:20.434 INFO  [,] o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - seed products"
+16:58:20.473 INFO  [,] o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.062s)
+16:58:20.581 INFO  [,] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:58:20.638 INFO  [,] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+16:58:20.676 INFO  [,] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16:58:20.978 INFO  [,] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:58:21.008 INFO  [,] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:58:21.871 INFO  [,] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f6998b6
+16:58:21.873 INFO  [,] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:58:21.985 INFO  [,] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.18
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+16:58:23.181 INFO  [,] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16:58:23.292 INFO  [,] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:58:23.543 INFO  [,] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16:58:24.800 INFO  [,] o.s.b.a.e.web.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+16:58:24.935 INFO  [,] o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:58900]
+	client.dns.lookup = use_all_dns_ips
+	client.id = order-service-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+16:58:25.039 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:25.039 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:25.039 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654305036
+16:58:26.112 INFO  [,] o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for order-service-admin-0 unregistered
+16:58:26.117 INFO  [,] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+16:58:26.117 INFO  [,] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+16:58:26.117 INFO  [,] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+16:58:26.133 INFO  [,] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 58931 (http) with context path '/'
+16:58:26.157 INFO  [,] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:58900]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-order-service-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = order-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+16:58:26.202 INFO  [,] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+16:58:26.258 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:26.258 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:26.258 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654306258
+16:58:26.268 INFO  [,] o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-order-service-1, groupId=order-service] Subscribed to topic(s): inventory.reserved
+16:58:26.278 INFO  [,] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:58900]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-order-service-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = order-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+16:58:26.279 INFO  [,] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+16:58:26.290 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:26.290 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:26.290 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654306290
+16:58:26.297 INFO  [,] o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-order-service-2, groupId=order-service] Subscribed to topic(s): inventory.reservation-failed
+16:58:26.298 INFO  [,] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:58900]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-order-service-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = order-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+16:58:26.299 INFO  [,] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+16:58:26.306 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:26.307 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:26.307 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654306306
+16:58:26.314 INFO  [,] o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-order-service-3, groupId=order-service] Subscribed to topic(s): inventory.stock-released
+16:58:26.316 INFO  [,] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:58900]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-order-service-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = order-service
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+16:58:26.317 INFO  [,] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+16:58:26.325 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:26.325 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:26.325 INFO  [,] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654306324
+16:58:26.330 INFO  [,] o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-order-service-4, groupId=order-service] Subscribed to topic(s): inventory.stock-fulfilled
+16:58:26.342 INFO  [,] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-service-1, groupId=order-service] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+16:58:26.344 INFO  [,] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-service-2, groupId=order-service] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+16:58:26.348 INFO  [,] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-service-3, groupId=order-service] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+16:58:26.357 INFO  [,] c.o.o.i.OrderIntegrationTest - Started OrderIntegrationTest in 9.307 seconds (process running for 27.659)
+16:58:26.366 INFO  [,] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-order-service-4, groupId=order-service] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+16:58:26.696 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Discovered group coordinator localhost:58900 (id: 2147483646 rack: null)
+16:58:26.696 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Discovered group coordinator localhost:58900 (id: 2147483646 rack: null)
+16:58:26.697 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] (Re-)joining group
+16:58:26.697 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] (Re-)joining group
+16:58:26.705 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Discovered group coordinator localhost:58900 (id: 2147483646 rack: null)
+16:58:26.705 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] (Re-)joining group
+16:58:26.727 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Discovered group coordinator localhost:58900 (id: 2147483646 rack: null)
+16:58:26.727 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] (Re-)joining group
+16:58:26.802 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Request joining group due to: need to re-join with the given member-id: consumer-order-service-1-f01fea26-79af-484b-a27d-ba9ba279e99c
+16:58:26.802 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Request joining group due to: need to re-join with the given member-id: consumer-order-service-4-7f507302-d2b7-482e-9ea7-885aaf960061
+16:58:26.802 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] (Re-)joining group
+16:58:26.802 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] (Re-)joining group
+16:58:26.804 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Request joining group due to: need to re-join with the given member-id: consumer-order-service-2-f643b5ec-8002-4e3d-a802-403e83d723d5
+16:58:26.804 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] (Re-)joining group
+16:58:26.804 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Request joining group due to: need to re-join with the given member-id: consumer-order-service-3-4a7dc9f6-d74c-4c42-b302-d545b69f86dd
+16:58:26.804 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] (Re-)joining group
+16:58:26.885 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-service-3-4a7dc9f6-d74c-4c42-b302-d545b69f86dd', protocol='range'}
+16:58:26.887 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-service-4-7f507302-d2b7-482e-9ea7-885aaf960061', protocol='range'}
+16:58:26.887 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-service-2-f643b5ec-8002-4e3d-a802-403e83d723d5', protocol='range'}
+16:58:26.895 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-service-1-f01fea26-79af-484b-a27d-ba9ba279e99c', protocol='range'}
+16:58:26.915 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Finished assignment for group at generation 1: {consumer-order-service-3-4a7dc9f6-d74c-4c42-b302-d545b69f86dd=Assignment(partitions=[inventory.stock-released-0]), consumer-order-service-4-7f507302-d2b7-482e-9ea7-885aaf960061=Assignment(partitions=[inventory.stock-fulfilled-0]), consumer-order-service-2-f643b5ec-8002-4e3d-a802-403e83d723d5=Assignment(partitions=[inventory.reservation-failed-0]), consumer-order-service-1-f01fea26-79af-484b-a27d-ba9ba279e99c=Assignment(partitions=[inventory.reserved-0])}
+16:58:26.957 INFO  [,] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:58:26.957 INFO  [,] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:58:26.960 INFO  [,] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+16:58:27.000 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-service-3-4a7dc9f6-d74c-4c42-b302-d545b69f86dd', protocol='range'}
+16:58:27.001 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Notifying assignor about the new Assignment(partitions=[inventory.stock-released-0])
+16:58:27.003 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-service-4-7f507302-d2b7-482e-9ea7-885aaf960061', protocol='range'}
+16:58:27.003 INFO  [,] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-order-service-3, groupId=order-service] Adding newly assigned partitions: inventory.stock-released-0
+16:58:27.004 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Notifying assignor about the new Assignment(partitions=[inventory.stock-fulfilled-0])
+16:58:27.004 INFO  [,] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-order-service-4, groupId=order-service] Adding newly assigned partitions: inventory.stock-fulfilled-0
+16:58:27.004 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-service-2-f643b5ec-8002-4e3d-a802-403e83d723d5', protocol='range'}
+16:58:27.004 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Notifying assignor about the new Assignment(partitions=[inventory.reservation-failed-0])
+16:58:27.004 INFO  [,] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-order-service-2, groupId=order-service] Adding newly assigned partitions: inventory.reservation-failed-0
+16:58:27.009 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-service-1-f01fea26-79af-484b-a27d-ba9ba279e99c', protocol='range'}
+16:58:27.009 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Notifying assignor about the new Assignment(partitions=[inventory.reserved-0])
+16:58:27.009 INFO  [,] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-order-service-1, groupId=order-service] Adding newly assigned partitions: inventory.reserved-0
+16:58:27.038 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-3, groupId=order-service] Found no committed offset for partition inventory.stock-released-0
+16:58:27.038 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-2, groupId=order-service] Found no committed offset for partition inventory.reservation-failed-0
+16:58:27.040 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-1, groupId=order-service] Found no committed offset for partition inventory.reserved-0
+16:58:27.040 INFO  [,] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-order-service-4, groupId=order-service] Found no committed offset for partition inventory.stock-fulfilled-0
+16:58:27.088 INFO  [,] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-order-service-3, groupId=order-service] Resetting offset for partition inventory.stock-released-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:58900 (id: 1 rack: null)], epoch=0}}.
+16:58:27.088 INFO  [,] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-order-service-4, groupId=order-service] Resetting offset for partition inventory.stock-fulfilled-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:58900 (id: 1 rack: null)], epoch=0}}.
+16:58:27.089 INFO  [,] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-order-service-2, groupId=order-service] Resetting offset for partition inventory.reservation-failed-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:58900 (id: 1 rack: null)], epoch=0}}.
+16:58:27.089 INFO  [,] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-order-service-1, groupId=order-service] Resetting offset for partition inventory.reserved-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:58900 (id: 1 rack: null)], epoch=0}}.
+16:58:27.090 INFO  [,] o.s.k.l.KafkaMessageListenerContainer - order-service: partitions assigned: [inventory.stock-fulfilled-0]
+16:58:27.090 INFO  [,] o.s.k.l.KafkaMessageListenerContainer - order-service: partitions assigned: [inventory.reservation-failed-0]
+16:58:27.090 INFO  [,] o.s.k.l.KafkaMessageListenerContainer - order-service: partitions assigned: [inventory.reserved-0]
+16:58:27.090 INFO  [,] o.s.k.l.KafkaMessageListenerContainer - order-service: partitions assigned: [inventory.stock-released-0]
+16:58:27.338 INFO  [6a31e322e067fd5bdd781f8202085b60,dd781f8202085b60] o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:58900]
+	client.dns.lookup = use_all_dns_ips
+	client.id = order-service-admin-1
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+16:58:27.340 INFO  [6a31e322e067fd5bdd781f8202085b60,dd781f8202085b60] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:27.340 INFO  [6a31e322e067fd5bdd781f8202085b60,dd781f8202085b60] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:27.340 INFO  [6a31e322e067fd5bdd781f8202085b60,dd781f8202085b60] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654307340
+16:58:27.371 INFO  [,] o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for order-service-admin-1 unregistered
+16:58:27.372 INFO  [,] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+16:58:27.372 INFO  [,] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+16:58:27.373 INFO  [,] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+16:58:27.384 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:58900]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = order-service-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+16:58:27.385 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+16:58:27.395 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.k.clients.producer.KafkaProducer - [Producer clientId=order-service-producer-1] Instantiated an idempotent producer.
+16:58:27.410 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+16:58:27.410 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+16:58:27.410 INFO  [6a31e322e067fd5bdd781f8202085b60,3675816e9347d09b] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1781654307410
+16:58:27.428 INFO  [,] org.apache.kafka.clients.Metadata - [Producer clientId=order-service-producer-1] Cluster ID: 4L6g3nShT-eMCtK--X86sw
+16:58:27.451 INFO  [6a31e322e067fd5bdd781f8202085b60,dd781f8202085b60] c.o.o.a.OrderEventPublisher - Published OrderCreatedEvent for order 90bfa148-315f-431a-b3c6-f9706a91b4f1
+16:58:27.555 INFO  [,] o.a.k.c.p.i.TransactionManager - [Producer clientId=order-service-producer-1] ProducerId set to 0 with epoch 0
+]]></system-out>
+  </testcase>
+  <testcase name="listOrders_returnsPagedResults" classname="com.orderplatform.orderservice.integration.OrderIntegrationTest" time="0.108">
+    <system-out><![CDATA[16:58:27.645 INFO  [6a31e3232b5f6bf8c997b3ba08009220,c997b3ba08009220] c.o.o.a.OrderEventPublisher - Published OrderCreatedEvent for order 3f12a617-834f-4868-8155-99e7bb90a71d
+16:58:27.710 DEBUG [6a31e32328f78a072531db2df110d0fd,2531db2df110d0fd] c.o.o.application.OrderService - Listing orders customerId=cust-list-test
+]]></system-out>
+  </testcase>
+  <testcase name="getOrder_notFound_returns404" classname="com.orderplatform.orderservice.integration.OrderIntegrationTest" time="0.047"/>
+  <testcase name="getOrder_byId_returnsCorrectOrder" classname="com.orderplatform.orderservice.integration.OrderIntegrationTest" time="0.054">
+    <system-out><![CDATA[16:58:27.806 INFO  [6a31e3239f72537b90c222083ca6cef5,90c222083ca6cef5] c.o.o.a.OrderEventPublisher - Published OrderCreatedEvent for order e82be063-1ac6-4dfb-8440-7191eec75201
+16:58:27.826 DEBUG [6a31e3230f70a105b2646b71e6595a7b,b2646b71e6595a7b] c.o.o.application.OrderService - Getting order id=e82be063-1ac6-4dfb-8440-7191eec75201
+]]></system-out>
+  </testcase>
+</testsuite>

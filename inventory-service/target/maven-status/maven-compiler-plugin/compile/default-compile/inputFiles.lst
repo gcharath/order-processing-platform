@@ -1,0 +1,17 @@
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/InventoryServiceApplication.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/api/InventoryController.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/api/request/AddStockRequest.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/api/response/InventoryItemResponse.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/application/InventoryService.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/config/GlobalExceptionHandler.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/config/KafkaConfig.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/config/KafkaHealthIndicator.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/domain/InsufficientStockException.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/domain/InventoryItem.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/domain/Reservation.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/domain/ReservationStatus.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/messaging/OrderCancelledConsumer.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/messaging/OrderCreatedConsumer.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/messaging/OrderFulfilledConsumer.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/repository/InventoryItemRepository.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/inventory-service/src/main/java/com/orderplatform/inventoryservice/repository/ReservationRepository.java

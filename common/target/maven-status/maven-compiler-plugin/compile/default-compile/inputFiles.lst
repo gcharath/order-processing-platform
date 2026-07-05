@@ -1,0 +1,8 @@
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/InventoryReservationFailedEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/InventoryReservedEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/OrderCancelledEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/OrderCreatedEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/OrderFulfilledEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/OrderItemEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/StockFulfilledEvent.java
+/Users/charathgopalakrishnan/eclipse-workspace/claude/order-processing-platform/common/src/main/java/com/orderplatform/common/event/StockReleasedEvent.java

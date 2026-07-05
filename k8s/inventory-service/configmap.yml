@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-service-config
+  namespace: order-platform
+data:
+  SPRING_PROFILES_ACTIVE: docker
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-0.postgres.order-platform.svc.cluster.local:5432/inventory_db
+  SPRING_DATASOURCE_USERNAME: orderplatform
+  SPRING_KAFKA_BOOTSTRAPSERVERS: kafka-0.kafka.order-platform.svc.cluster.local:9092
+  MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin.order-platform.svc.cluster.local:9411/api/v2/spans
