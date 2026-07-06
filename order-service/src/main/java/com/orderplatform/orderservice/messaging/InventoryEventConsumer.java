@@ -22,7 +22,7 @@ public class InventoryEventConsumer {
     @KafkaListener(topics = "inventory.reserved", groupId = "order-service")
     @Transactional
     public void onReserved(InventoryReservedEvent event) {
-        log.info("Inventory reserved for order {}, updating status to CONFIRMED", event.orderId());
+        log.info("Inventory reserved for order {}, updating status to CONFIRMED.", event.orderId());
         orderRepository.findById(event.orderId()).ifPresent(order -> {
             order.setStatus(OrderStatus.CONFIRMED);
             orderRepository.save(order);
@@ -42,7 +42,7 @@ public class InventoryEventConsumer {
     @KafkaListener(topics = "inventory.stock-released", groupId = "order-service")
     @Transactional
     public void onStockReleased(StockReleasedEvent event) {
-        log.info("Stock released for order {}, updating status to CANCELLED", event.orderId());
+        log.info("Stock released for order {}, updating status to CANCELLED.", event.orderId());
         orderRepository.findById(event.orderId()).ifPresent(order -> {
             order.setStatus(OrderStatus.CANCELLED);
             orderRepository.save(order);
