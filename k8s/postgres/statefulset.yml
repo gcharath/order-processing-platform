@@ -27,6 +27,8 @@ spec:
                   key: SPRING_DATASOURCE_PASSWORD
             - name: POSTGRES_MULTIPLE_DATABASES
               value: orders_db,inventory_db
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
           ports:
             - containerPort: 5432
           volumeMounts:
