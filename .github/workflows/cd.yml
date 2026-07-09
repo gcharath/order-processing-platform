@@ -52,6 +52,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           kubectl apply -f k8s/namespace.yml
+          kubectl apply -f k8s/storageclass.yml
           kubectl apply -f k8s/secrets.yml
           kubectl apply -f k8s/postgres/
           kubectl apply -f k8s/kafka/
